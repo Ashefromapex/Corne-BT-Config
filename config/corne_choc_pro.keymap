@@ -6,6 +6,7 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
     chosen { zmk,physical-layout = &default_layout; };
@@ -50,6 +51,58 @@
         };
     };
 
+    behaviors {
+        HMSHIFT_R: HMSHIFT_R {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMSHIFT_R";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-while-undecided;
+            hold-trigger-key-positions = <42 0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 40 41 42>;
+            hold-trigger-on-release;
+        };
+
+        HMSHIFT_L: HMSHIFT_L {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMSHIFT_L";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-while-undecided;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 34 35 36 37 38 39 43 44 45>;
+        };
+
+        HMR: HMR {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-while-undecided;
+            hold-trigger-key-positions = <42 0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 40 41 42>;
+            hold-trigger-on-release;
+            flavor = "tap-preferred";
+        };
+
+        HML: HML {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-while-undecided;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 34 35 36 37 38 39 43 44 45>;
+            flavor = "tap-preferred";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -63,10 +116,10 @@
             //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp F  &kp P  &kp B      &trans  &trans  &kp J           &kp L  &kp U      &kp Y    &kp SEMI  &kp BSPC
-&kp APOS   &kp A  &kp R  &kp S  &kp T  &kp G      &trans  &trans  &kp M           &kp N  &kp E      &kp I    &kp O     &kp ENTER
-&kp LC(B)  &kp Z  &kp X  &kp C  &kp D  &kp V                      &kp K           &kp H  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &mo 3  &mo 2  &kp SPACE                  &kp LEFT_SHIFT  &mo 1  &mo 4
+&kp TAB    &kp Q                &kp W            &kp F            &kp P                    &kp B      &trans  &trans  &kp J           &kp L                     &kp U             &kp Y             &kp SEMI              &kp BSPC
+&kp APOS   &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &HMSHIFT_L LEFT_SHIFT T  &kp G      &trans  &trans  &kp M           &HMSHIFT_R RIGHT_SHIFT N  &HMR RIGHT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &kp ENTER
+&kp LC(B)  &kp Z                &kp X            &kp C            &kp D                    &kp V                      &kp K           &kp H                     &kp COMMA         &kp DOT           &kp FSLH              &kp ESC
+                                                 &mo 3            &mo 2                    &kp SPACE                  &kp LEFT_SHIFT  &mo 1                     &mo 4
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_BRI_DN C_BRI_UP>;
@@ -102,20 +155,20 @@
         special-move {
             display-name = "EDIT";
             bindings = <
-&trans  &trans     &trans  &trans     &trans  &trans  &trans  &trans  &kp DOWN_ARROW  &kp RIGHT       &umlaut_u  &trans  &trans     &trans
-&trans  &umlaut_a  &trans  &kp RA(S)  &trans  &trans  &trans  &trans  &trans          &trans          &trans     &trans  &umlaut_o  &trans
-&trans  &trans     &trans  &trans     &trans  &trans                  &kp UP_ARROW    &kp LEFT_ARROW  &trans     &trans  &trans     &trans
-                           &trans     &trans  &trans                  &kp LEFT_SHIFT  &trans          &trans
+&trans  &trans     &trans        &trans     &trans  &trans  &trans  &trans  &kp DOWN_ARROW  &kp RIGHT       &umlaut_u     &trans  &trans     &kp DELETE
+&trans  &umlaut_a  &kp LEFT_ALT  &kp RA(S)  &trans  &trans  &trans  &trans  &trans          &trans          &kp LEFT_GUI  &trans  &umlaut_o  &kp INS
+&trans  &trans     &trans        &trans     &trans  &trans                  &kp UP_ARROW    &kp LEFT_ARROW  &trans        &trans  &trans     &trans
+                                 &trans     &trans  &trans                  &kp LEFT_SHIFT  &trans          &trans
             >;
         };
 
         system {
             display-name = "SYS";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                  &trans  &trans  &trans
+&trans  &kp C_VOL_UP  &kp F7  &kp F8  &kp F9  &rgb_ug RGB_TOG   &trans  &trans  &kp PAGE_DOWN  &rgb_ug RGB_COLOR_HSB(30,100,50)  &rgb_ug RGB_COLOR_HSB(0,0,100)  &rgb_ug RGB_COLOR_HSB(183,82,43)  &trans  &sys_reset
+&trans  &kp C_MUTE    &kp F4  &kp F5  &kp F6  &rgb_ug RGB_BRI   &trans  &trans  &trans         &kp PRINTSCREEN                   &trans                          &trans                            &trans  &studio_unlock
+&trans  &kp C_VOL_DN  &kp F1  &kp F2  &kp F3  &rgb_ug RGB_BRD                   &kp PAGE_UP    &trans                            &trans                          &trans                            &trans  &trans
+                              &trans  &trans  &kp C_PLAY_PAUSE                  &trans         &trans                            &trans
             >;
         };
 

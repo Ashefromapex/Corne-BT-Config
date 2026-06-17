@@ -135,10 +135,10 @@
         super-nav {
             display-name = "MOV";
             bindings = <
-&trans             &kp LA(LC(LG(C)))   &kp LA(LC(LG(N7)))        &kp LA(LC(LG(N8)))        &kp LA(LC(LG(N9)))        &kp LA(LC(LG(LS(SPACE))))  &trans  &trans  &kp LA(LC(LG(J)))  &kp LA(LC(LG(L)))  &kp LG(LC(LA(I)))  &kp LA(LG(LC(A)))      &kp LC(LA(LG(B)))      &kp LS(LA(LC(LG(ENTER))))
-&kp LA(LC(LG(P)))  &kp LA(LC(LG(N0)))  &kp LA(LC(LG(NUMBER_4)))  &kp LA(LC(LG(N5)))        &kp LA(LC(LG(NUMBER_6)))  &kp LS(LA(LC(LG(TAB))))    &trans  &trans  &kp LA(LC(LG(F)))  &kp LA(LC(LG(S)))  &kp LG(LA(LC(V)))  &kp LA(LC(LG(SPACE)))  &kp LS(LA(LC(LG(F))))  &kp LA(LC(LG(ENTER)))
-&trans             &kp LA(LC(LG(T)))   &kp LA(LC(LG(NUMBER_1)))  &kp LA(LC(LG(NUMBER_2)))  &kp LA(LC(LG(NUMBER_3)))  &kp LA(LC(LG(N)))                          &kp LA(LC(LG(K)))  &kp LA(LC(LG(H)))  &kp LA(LG(LC(D)))  &kp LA(LC(LG(W)))      &kp LS(LA(LC(LG(B))))  &kp LA(LG(LC(TAB)))
-                                                                 &kp LA(LC(LG(Q)))         &kp LA(LC(LG(P)))         &kp ESCAPE                                 &trans             &trans             &trans
+&kp LA(LC(LG(G)))  &kp LA(LC(LG(C)))   &kp LA(LC(LG(N7)))        &kp LA(LC(LG(N8)))        &kp LA(LC(LG(N9)))        &kp LA(LC(LG(LS(SPACE))))  &trans  &trans  &kp LA(LC(LG(J)))  &kp LA(LC(LG(L)))         &kp LG(LC(LA(I)))  &kp LA(LG(LC(A)))      &kp LC(LA(LG(LS(F))))  &kp LS(LA(LC(LG(ENTER))))
+&kp LA(LC(LG(P)))  &kp LA(LC(LG(N0)))  &kp LA(LC(LG(NUMBER_4)))  &kp LA(LC(LG(N5)))        &kp LA(LC(LG(NUMBER_6)))  &kp LS(LA(LC(LG(TAB))))    &trans  &trans  &kp LA(LC(LG(F)))  &kp LA(LC(LG(UP_ARROW)))  &kp LG(LA(LC(V)))  &kp LA(LC(LG(SPACE)))  &kp LA(LC(LG(S)))      &kp LA(LC(LG(ENTER)))
+&kp LA(LC(LG(N)))  &kp LA(LC(LG(T)))   &kp LA(LC(LG(NUMBER_1)))  &kp LA(LC(LG(NUMBER_2)))  &kp LA(LC(LG(NUMBER_3)))  &kp LA(LC(LG(N)))                          &kp LA(LC(LG(K)))  &kp LA(LC(LG(H)))         &kp LA(LG(LC(D)))  &kp LA(LC(LG(TAB)))    &kp LS(LA(LC(LG(B))))  &kp LA(LG(LC(W)))
+                                                                 &trans                    &trans                    &trans                                     &kp LEFT_SHIFT     &kp LA(LC(LG(P)))         &kp LA(LC(LG(Q)))
             >;
         };
 
@@ -155,10 +155,10 @@
         system {
             display-name = "SYS";
             bindings = <
-&trans  &kp C_VOL_UP  &kp F7  &kp F8  &kp F9  &rgb_ug RGB_TOG   &trans  &trans  &kp PAGE_DOWN  &rgb_ug RGB_COLOR_HSB(30,100,50)  &rgb_ug RGB_COLOR_HSB(0,0,100)  &rgb_ug RGB_COLOR_HSB(183,82,43)  &trans  &sys_reset
-&trans  &kp C_MUTE    &kp F4  &kp F5  &kp F6  &rgb_ug RGB_BRI   &trans  &trans  &trans         &kp PRINTSCREEN                   &trans                          &trans                            &trans  &studio_unlock
-&trans  &kp C_VOL_DN  &kp F1  &kp F2  &kp F3  &rgb_ug RGB_BRD                   &kp PAGE_UP    &trans                            &trans                          &trans                            &trans  &trans
-                              &trans  &trans  &kp C_PLAY_PAUSE                  &trans         &trans                            &trans
+&trans  &kp C_VOL_UP  &kp F7  &kp F8          &kp F9      &rgb_ug RGB_TOG   &trans  &trans  &kp PAGE_DOWN  &rgb_ug RGB_COLOR_HSB(30,100,50)  &rgb_ug RGB_COLOR_HSB(0,0,100)  &rgb_ug RGB_COLOR_HSB(183,82,43)  &trans  &sys_reset
+&trans  &kp C_MUTE    &kp F4  &kp F5          &kp F6      &rgb_ug RGB_BRI   &trans  &trans  &trans         &kp PRINTSCREEN                   &trans                          &trans                            &trans  &studio_unlock
+&trans  &kp C_VOL_DN  &kp F1  &kp F2          &kp F3      &rgb_ug RGB_BRD                   &kp PAGE_UP    &trans                            &trans                          &trans                            &trans  &trans
+                              &kp C_PREVIOUS  &kp C_NEXT  &kp C_PLAY_PAUSE                  &trans         &trans                            &trans
             >;
         };
 

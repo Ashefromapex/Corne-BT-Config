@@ -70,12 +70,11 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <190>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <170>;
+            require-prior-idle-ms = <165>;
             flavor = "balanced";
-            hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 34 35 36 37 38 39 43 44 45>;
-            hold-trigger-on-release;
+            hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 34 35 36 37 38 39 43 44 45 42 41 40>;
         };
 
         HRM2_R: HRM2_R {
@@ -84,11 +83,10 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <190>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <170>;
+            require-prior-idle-ms = <165>;
             flavor = "balanced";
-            hold-trigger-on-release;
             hold-trigger-key-positions = <16 0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 40 41 42 43>;
         };
     };
@@ -97,7 +95,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "COLEMAK";
+            display-name = "COLE";
 
             // --------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |  MUTE |  PP   |  Y  |  U   |  I  |  O  |  P  | BSPC |
@@ -115,8 +113,8 @@
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_BRI_DN C_BRI_UP>;
         };
 
-        number-symbol {
-            display-name = "NUMBER";
+        layer_1 {
+            display-name = "NUM";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5    |  LCTRL | RCTRL |  6  |  7  |  8  |  9  |  0  | BSPC |
@@ -132,7 +130,7 @@
             >;
         };
 
-        super-nav {
+        layer_2 {
             display-name = "MOV";
             bindings = <
 &kp LA(LC(LG(G)))  &kp LA(LC(LG(C)))   &kp LA(LC(LG(N7)))        &kp LA(LC(LG(N8)))        &kp LA(LC(LG(N9)))        &kp LA(LC(LG(LS(SPACE))))  &trans  &trans  &kp LA(LC(LG(J)))  &kp LA(LC(LG(L)))         &kp LG(LC(LA(I)))  &kp LA(LG(LC(A)))      &kp LC(LA(LG(LS(F))))  &kp LS(LA(LC(LG(ENTER))))
@@ -142,8 +140,8 @@
             >;
         };
 
-        special-move {
-            display-name = "EDIT";
+        layer_3 {
+            display-name = "SPEC";
             bindings = <
 &trans  &trans     &trans        &trans     &trans  &trans  &trans  &trans  &kp DOWN_ARROW  &kp RIGHT       &umlaut_u     &trans  &trans     &kp DELETE
 &trans  &umlaut_a  &kp LEFT_ALT  &kp RA(S)  &trans  &trans  &trans  &trans  &trans          &trans          &kp LEFT_GUI  &trans  &umlaut_o  &kp INS
@@ -152,60 +150,13 @@
             >;
         };
 
-        system {
+        layer_4 {
             display-name = "SYS";
             bindings = <
 &trans  &kp C_VOL_UP  &kp F7  &kp F8          &kp F9      &rgb_ug RGB_TOG   &trans  &trans  &kp PAGE_DOWN  &rgb_ug RGB_COLOR_HSB(30,100,50)  &rgb_ug RGB_COLOR_HSB(0,0,100)  &rgb_ug RGB_COLOR_HSB(183,82,43)  &trans  &sys_reset
 &trans  &kp C_MUTE    &kp F4  &kp F5          &kp F6      &rgb_ug RGB_BRI   &trans  &trans  &trans         &kp PRINTSCREEN                   &trans                          &trans                            &trans  &studio_unlock
 &trans  &kp C_VOL_DN  &kp F1  &kp F2          &kp F3      &rgb_ug RGB_BRD                   &kp PAGE_UP    &trans                            &trans                          &trans                            &trans  &trans
                               &kp C_PREVIOUS  &kp C_NEXT  &kp C_PLAY_PAUSE                  &trans         &trans                            &trans
-            >;
-        };
-
-        layer5 {
-            display-name = "NAV";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  | LCTRL | RCTRL |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | CTRL |     |     |     |     |     |  LALT | RALT  |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |               |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |               | ENT |     | ALT |
-
-            bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp LCTRL  &kp RCTRL  &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans     &kp LALT   &kp RALT   &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans     &trans    &trans  &trans    &trans    &trans                           &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE                        &kp RET    &trans     &kp RALT
-            >;
-        };
-
-        extra_layer_4 {
-            display-name = "EXTRA 4";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                  &trans  &trans  &trans
-            >;
-        };
-
-        extra_layer_5 {
-            display-name = "EXTRA 5";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                  &trans  &trans  &trans
-            >;
-        };
-
-        extra_layer_6 {
-            display-name = "EXTRA 6";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                  &trans  &trans  &trans
             >;
         };
     };

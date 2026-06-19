@@ -125,7 +125,7 @@
             bindings = <
 &kp TAB       &kp PLUS   &kp N7        &kp N8        &kp N9          &kp AMPERSAND  &trans  &trans  &kp CARET        &kp LEFT_BRACE                       &kp RIGHT_BRACE                     &kp PIPE                   &kp HASH       &kp BSPC
 &kp ASTERISK  &kp N0     &kp NUMBER_4  &kp N5        &kp NUMBER_6    &kp SLASH      &trans  &trans  &kp EXCLAMATION  &HRM2_R LEFT_SHIFT LEFT_PARENTHESIS  &HRM2_R LEFT_GUI RIGHT_PARENTHESIS  &HRM2_R LEFT_ALT QUESTION  &kp BACKSLASH  &kp ENTER
-&kp LSHFT     &kp MINUS  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &kp PERCENT                    &kp LESS_THAN    &kp LEFT_BRACKET                     &kp RIGHT_BRACKET                   &kp GREATER_THAN           &kp TILDE      &kp ESCAPE
+&kp LSHFT     &kp MINUS  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &kp PERCENT                    &kp EQUAL        &kp LEFT_BRACKET                     &kp RIGHT_BRACKET                   &kp SEMICOLON              &kp TILDE      &kp ESCAPE
                                        &kp AT        &kp LEFT_SHIFT  &kp SPACE                      &trans           &trans                               &trans
             >;
         };

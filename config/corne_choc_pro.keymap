@@ -135,7 +135,7 @@
             bindings = <
 &kp LA(LC(LG(G)))  &kp LA(LC(LG(C)))   &kp LA(LC(LG(N7)))        &kp LA(LC(LG(N8)))        &kp LA(LC(LG(N9)))        &kp LA(LC(LG(LS(SPACE))))  &trans  &trans  &kp LA(LC(LG(J)))  &kp LA(LC(LG(L)))         &kp LG(LC(LA(I)))  &kp LA(LG(LC(A)))      &kp LC(LA(LG(LS(F))))  &kp LS(LA(LC(LG(ENTER))))
 &kp LA(LC(LG(P)))  &kp LA(LC(LG(N0)))  &kp LA(LC(LG(NUMBER_4)))  &kp LA(LC(LG(N5)))        &kp LA(LC(LG(NUMBER_6)))  &kp LS(LA(LC(LG(TAB))))    &trans  &trans  &kp LA(LC(LG(F)))  &kp LA(LC(LG(UP_ARROW)))  &kp LG(LA(LC(V)))  &kp LA(LC(LG(SPACE)))  &kp LA(LC(LG(S)))      &kp LA(LC(LG(ENTER)))
-&kp LA(LC(LG(N)))  &kp LA(LC(LG(T)))   &kp LA(LC(LG(NUMBER_1)))  &kp LA(LC(LG(NUMBER_2)))  &kp LA(LC(LG(NUMBER_3)))  &kp LA(LC(LG(N)))                          &kp LA(LC(LG(K)))  &kp LA(LC(LG(H)))         &kp LA(LG(LC(D)))  &kp LA(LC(LG(TAB)))    &kp LS(LA(LC(LG(B))))  &kp LA(LG(LC(W)))
+&kp LA(LC(LG(N)))  &kp LA(LC(LG(T)))   &kp LA(LC(LG(NUMBER_1)))  &kp LA(LC(LG(NUMBER_2)))  &kp LA(LC(LG(NUMBER_3)))  &kp LA(LC(LG(N)))                          &kp LA(LC(LG(K)))  &kp LA(LC(LG(H)))         &kp LA(LG(LC(D)))  &kp LA(LC(LG(TAB)))    &kp LA(LC(LG(B)))      &kp LA(LG(LC(W)))
                                                                  &trans                    &trans                    &trans                                     &kp LEFT_SHIFT     &kp LA(LC(LG(P)))         &kp LA(LC(LG(Q)))
             >;
         };
